@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 30, 2017 9:37:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.fgs.fsc_model.TbArticles" table="tb_articles" catalog="saminko_attendance_system" optimistic-lock="version">
+        <id name="idarticles" type="java.lang.Integer">
+            <column name="idarticles" />
+            <generator class="identity" />
+        </id>
+        <property name="articleId" type="int">
+            <column name="article_id" not-null="true" />
+        </property>
+        <property name="articleTitles" type="string">
+            <column name="article_titles" length="45" />
+        </property>
+        <property name="articleContent" type="string">
+            <column name="article_content" length="45" />
+        </property>
+        <property name="articleImage" type="string">
+            <column name="article_image" length="45" />
+        </property>
+        <property name="articleDate" type="string">
+            <column name="article_date" length="45" />
+        </property>
+        <property name="articleFlash" type="string">
+            <column name="article_flash" length="45" />
+        </property>
+        <property name="articleReadMore" type="string">
+            <column name="article_read_more" length="45" />
+        </property>
+        <property name="articleAuthor" type="string">
+            <column name="article_author" length="45" />
+        </property>
+        <property name="articleStatus" type="string">
+            <column name="article_status" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

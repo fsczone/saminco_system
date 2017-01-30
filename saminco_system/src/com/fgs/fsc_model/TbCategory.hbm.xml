@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 30, 2017 9:37:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.fgs.fsc_model.TbCategory" table="tb_category" catalog="saminko_attendance_system" optimistic-lock="version">
+        <id name="idcategory" type="java.lang.Integer">
+            <column name="idcategory" />
+            <generator class="identity" />
+        </id>
+        <property name="categoryName" type="string">
+            <column name="category_name" length="45" />
+        </property>
+        <property name="categoryStatus" type="string">
+            <column name="category_status" length="45" />
+        </property>
+        <set name="tbClasses" table="tb_class" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="category_idcategory" not-null="true" />
+            </key>
+            <one-to-many class="com.fgs.fsc_model.TbClass" />
+        </set>
+    </class>
+</hibernate-mapping>

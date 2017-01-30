@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="saminko_attendance_system"/>
+  <table-filter match-name="tb_articles"/>
+  <table-filter match-name="tb_pages"/>
+  <table-filter match-name="tb_student_has_payment"/>
+  <table-filter match-name="tb_type"/>
+  <table-filter match-name="tb_privilage_has_pages"/>
+  <table-filter match-name="tb_student_has_exam"/>
+  <table-filter match-name="tb_class_has_exam"/>
+  <table-filter match-name="tb_user_type"/>
+  <table-filter match-name="tb_class"/>
+  <table-filter match-name="tb_class_fees"/>
+  <table-filter match-name="tb_payment"/>
+  <table-filter match-name="tb_category"/>
+  <table-filter match-name="tb_student"/>
+  <table-filter match-name="tb_student_has_class"/>
+  <table-filter match-name="tb_class_has_tute"/>
+  <table-filter match-name="tb_privilage"/>
+  <table-filter match-name="tb_exam"/>
+  <table-filter match-name="tb_attendance"/>
+  <table-filter match-name="tb_tute"/>
+  <table-filter match-name="tb_user_account"/>
+</hibernate-reverse-engineering>

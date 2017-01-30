@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 30, 2017 9:37:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.fgs.fsc_model.TbStudent" table="tb_student" catalog="saminko_attendance_system" optimistic-lock="version">
+        <id name="idstudent" type="java.lang.Integer">
+            <column name="idstudent" />
+            <generator class="identity" />
+        </id>
+        <property name="studentId" type="string">
+            <column name="student_id" length="45" not-null="true" />
+        </property>
+        <property name="studentName" type="string">
+            <column name="student_name" length="45" />
+        </property>
+        <property name="studentEmail" type="string">
+            <column name="student_email" length="45" />
+        </property>
+        <property name="studentPhone" type="string">
+            <column name="student_phone" length="45" />
+        </property>
+        <property name="studentParentNo" type="string">
+            <column name="student_parent_no" length="45" />
+        </property>
+        <property name="studentParentName" type="string">
+            <column name="student_parent_name" length="45" />
+        </property>
+        <property name="studentStatus" type="string">
+            <column name="student_status" length="45" />
+        </property>
+        <set name="tbAttendances" table="tb_attendance" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="student_idstudent" not-null="true" />
+            </key>
+            <one-to-many class="com.fgs.fsc_model.TbAttendance" />
+        </set>
+        <set name="tbStudentHasExams" table="tb_student_has_exam" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="student_idstudent" not-null="true" />
+            </key>
+            <one-to-many class="com.fgs.fsc_model.TbStudentHasExam" />
+        </set>
+        <set name="tbStudentHasPayments" table="tb_student_has_payment" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="student_idstudent" not-null="true" />
+            </key>
+            <one-to-many class="com.fgs.fsc_model.TbStudentHasPayment" />
+        </set>
+        <set name="tbStudentHasClasses" table="tb_student_has_class" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="student_idstudent" not-null="true" />
+            </key>
+            <one-to-many class="com.fgs.fsc_model.TbStudentHasClass" />
+        </set>
+    </class>
+</hibernate-mapping>

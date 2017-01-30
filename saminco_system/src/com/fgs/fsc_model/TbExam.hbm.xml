@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 30, 2017 9:37:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.fgs.fsc_model.TbExam" table="tb_exam" catalog="saminko_attendance_system" optimistic-lock="version">
+        <id name="idexam" type="java.lang.Integer">
+            <column name="idexam" />
+            <generator class="identity" />
+        </id>
+        <property name="examId" type="int">
+            <column name="exam_id" not-null="true" />
+        </property>
+        <property name="examName" type="string">
+            <column name="exam_name" length="45" />
+        </property>
+        <property name="examStatus" type="string">
+            <column name="exam_status" length="45" />
+        </property>
+        <set name="tbClassHasExams" table="tb_class_has_exam" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="exam_idexam" not-null="true" />
+            </key>
+            <one-to-many class="com.fgs.fsc_model.TbClassHasExam" />
+        </set>
+        <set name="tbStudentHasExams" table="tb_student_has_exam" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="exam_idexam" not-null="true" />
+            </key>
+            <one-to-many class="com.fgs.fsc_model.TbStudentHasExam" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 30, 2017 9:37:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.fgs.fsc_model.TbPrivilageHasPages" table="tb_privilage_has_pages" catalog="saminko_attendance_system" optimistic-lock="version">
+        <id name="idprivilageHasPages" type="java.lang.Integer">
+            <column name="idprivilage_has_pages" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tbPages" class="com.fgs.fsc_model.TbPages" fetch="select">
+            <column name="pages_idpages" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tbPrivilage" class="com.fgs.fsc_model.TbPrivilage" fetch="select">
+            <column name="privilage_idprivilage" not-null="true" />
+        </many-to-one>
+        <property name="privilageHasPagesStatus" type="string">
+            <column name="privilage_has_pages_status" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

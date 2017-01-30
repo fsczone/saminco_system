@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 30, 2017 9:37:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.fgs.fsc_model.TbAttendance" table="tb_attendance" catalog="saminko_attendance_system" optimistic-lock="version">
+        <id name="idattendance" type="java.lang.Integer">
+            <column name="idattendance" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tbClass" class="com.fgs.fsc_model.TbClass" fetch="select">
+            <column name="class_idclass" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tbStudent" class="com.fgs.fsc_model.TbStudent" fetch="select">
+            <column name="student_idstudent" not-null="true" />
+        </many-to-one>
+        <property name="attendanceDate" type="string">
+            <column name="attendance_date" length="45" />
+        </property>
+        <property name="attendanceTime" type="string">
+            <column name="attendance_time" length="45" />
+        </property>
+        <property name="attendanceStatus" type="string">
+            <column name="attendance_status" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

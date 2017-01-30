@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/saminko_attendance_system?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <mapping resource="com/fgs/fsc_model/TbType.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbUserType.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbPrivilageHasPages.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbClass.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbArticles.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbClassHasExam.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbPayment.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbUserAccount.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbStudent.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbStudentHasClass.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbCategory.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbStudentHasExam.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbClassFees.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbStudentHasPayment.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbPrivilage.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbExam.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbTute.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbClassHasTute.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbAttendance.hbm.xml"/>
+    <mapping resource="com/fgs/fsc_model/TbPages.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>
